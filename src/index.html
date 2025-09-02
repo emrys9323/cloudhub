@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/output.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/8ba3c3513a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>VeeWallet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Navbar  -->
+    <nav
+      class="w-full h-20 border-b sticky py-3 lg:px-8 bg-[#FAFAFB] border-b-[#D3D6DE] lg:flex justify-between"
+    >
+      <div class="flex items-center justify-between">
+        <h2
+          class="font-glory font-bold text-[30px] text-[#10B981] leading-10 h-10 self-center"
+        >
+          VeeWallet
+        </h2>
+        <div class="flex items-center">
+          <div
+            class="font-inter font-normal text-[18px] leading-5.5 text-[#444A5B] md:flex md:flex-row gap-6 hidden space-y-3"
+          >
+            <a href="">Buy Crypto</a>
+            <a href="">Markets</a>
+            <a href="">Trades</a>
+            <a href="">Derivatives</a>
+            <a href="">Earn</a>
+            <a href="">NFT</a>
+          </div>
+          <div class="flex items-center md:hidden">
+            <button
+              id="menu-btn"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        id="mobile-menu"
+        class="font-inter font-normal text-[18px] leading-5.5 text-[#444A5B] bg-[#FAFAFB]  gap-6 md:hidden hidden"
+      >
+        <div class="text-center items-end justify-end space-y-4">
+          <div>
+            <a href="">Buy Crypto</a>
+          </div>
+          <div>
+            <a href="">Markets</a>
+          </div>
+          <div>
+            <a href="">Trades</a>
+          </div>
+          <div>
+            <a href="">Derivatives</a>
+          </div>
+          <div>
+            <a href="">Earn</a>
+          </div>
+          <div>
+            <a href="">NFT</a>
+          </div>
+        </div>
+      </div>
+      <div class="md:flex gap-4 hidden">
+        <button
+          type="submit"
+          class="rounded-lg py-3 px-4.5 h-12 text-[#10B981] self-center"
+        >
+          Sign in
+        </button>
+        <button
+          type="submit"
+          class="bg-[#10B981] rounded-lg py-3 px-4.5 text-white h-12 self-center"
+        >
+          Get Started
+        </button>
+        <img alt="img" src="/src/images/Currency.png" />
+        <img alt="img" src="/src/images/DarkMode.png" />
+      </div>
+    </nav>
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+    <!-- Navbar end -->
+    <div
+      class="lg:w-full lg:justify-between lg:flex lg:py-20 py-3 lg:px-20 px-4 bg-[#F4F5F7]"
+    >
+      <div class="flex flex-col gap-9">
+        <div class="flex flex-col gap-4">
+          <h1
+            class="font-inter font-semibold lg:text-6xl text-[35px] lg:leading-18 leading-10 lg:w-[652px]"
+          >
+            Buy, Trade and <span class="text-[#10B981]">Hodl</span> your
+            Favourite Cryptocurrencies
+          </h1>
+          <p
+            class="font-inter font-normal lg:text-xl lg:text-black text-[#90949E] text-[17px] leading-5 lg:leading-7"
+          >
+            Trade Over 1200 Cryptocurries Safely, Quickly and Easily
+          </p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div class="lg:flex flex flex-col lg:flex-row lg:gap-6 gap-3">
+            <div
+              class="flex lg:w-[310px] w-full bg-white h-12.5 rounded-[10px]"
+            >
+              <input
+                class="lg:w-[260px] w-[300px] h-5.5 bg-white my-3.5 ml-5 border-none"
+                type="text"
+                placeholder="Email Address"
+              />
+              <i class="fa-regular fa-envelope py-4 text-[#C3C6D2]"></i>
+            </div>
+            <button
+              type="submit"
+              class="bg-[#10B981] rounded-lg py-3 px-4.5 text-white h-12 lg:self-center"
+            >
+              Get Started
+            </button>
+          </div>
+          <p class="text-[#90949E] text-base">
+            Sign Up Now and Get 0 fees on Trading
+          </p>
+        </div>
+      </div>
+      <img
+        alt="img"
+        src="/src/images/3DIllustration.png"
+        class="lg:mt-0 mt-3 lg:w-[400px]"
+      />
+    </div>
+    <div class="w-full lg:py-16 py-3 lg:px-36 px-4 bg-[#F1FEF9]">
+      <div
+        class="flex lg:flex-row flex-col justify-between items-center content-center"
+      >
+        <div class="gap-y-2.5 flex flex-col">
+          <p
+            class="font-inter font-semibold text-4xl leading-[47px] text-[#0EA271]"
+          >
+            $2.05 billion
+          </p>
+          <p class="font-inter text-lg leading-5.5 text-[#444A5B]">
+            24h Trading Volume
+          </p>
+        </div>
+        <div class="gap-y-2.5 flex flex-col">
+          <p
+            class="font-inter font-semibold text-4xl leading-[47px] text-[#0EA271]"
+          >
+            1200+
+          </p>
+          <p class="font-inter text-lg leading-5.5 text-[#444A5B]">
+            Cryptocurrencies Listed
+          </p>
+        </div>
+        <div class="gap-y-2.5 flex flex-col">
+          <p
+            class="font-inter font-semibold text-4xl leading-[47px] text-[#0EA271]"
+          >
+            5+ million
+          </p>
+          <p class="font-inter text-lg leading-5.5 text-[#444A5B]">
+            Registered Users
+          </p>
+        </div>
+        <div class="gap-y-2.5 flex flex-col">
+          <p
+            class="font-inter font-semibold text-4xl leading-[47px] text-[#0EA271]"
+          >
+            0%
+          </p>
+          <p class="font-inter text-lg leading-5.5 text-[#444A5B]">
+            Lowest Trading Fees
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-full lg:py-16 py-3 lg:px-36 px-4 bg-[#FAFAFB] flex flex-col gap-9"
+    >
+      <h1 class="font-inter font-semibold text-[39px] leading-[47px]">
+        Porpular Markets
+      </h1>
+      <div class="flex flex-col gap-6">
+        <div class="flex gap-9">
+          <h2 class="font-inter font-semibold text-[20px] leading-7">Hot</h2>
+          <h2
+            class="font-inter font-semibold text-[20px] leading-7 text-[#90949E]"
+          >
+            New Coins
+          </h2>
+          <h2
+            class="font-inter font-semibold text-[20px] leading-7 text-[#90949E]"
+          >
+            Top Gainers
+          </h2>
+        </div>
+        <div class="flex lg:gap-32 gap-12">
+          <p
+            class="font-inter font-normal text-sm leading-[17px] text-[#90949E]"
+          >
+            Names
+          </p>
+          <p
+            class="font-inter font-normal text-sm leading-[17px] text-[#90949E] lg:ml-30"
+          >
+            Last Price
+          </p>
+          <p
+            class="font-inter font-normal text-sm leading-[17px] text-[#90949E]"
+          >
+            24h Change
+          </p>
+          <p
+            class="font-inter font-normal text-sm leading-[17px] text-[#90949E] hidden lg:block"
+          >
+            Chart
+          </p>
+        </div>
+        <table>
+          <tr class="flex h-12.5 justify-between">
+            <td class="flex gap-2 items-center lg:w-40.5">
+              <img alt="img" src="/src/images/BTCBitcoin.png" class="" />
+              <p class="">BTC</p>
+              <p class="text-[#90949E] hidden lg:block">Bitcoin</p>
+            </td>
+            <td class="content-center"><p class="">$16,834.56</p></td>
+            <td class="content-center"><p class="text-[#EC2121]">-3.23%</p></td>
+            <td class="content-center hidden lg:block">
+              <img alt="img" src="/src/images/BitcoinChart.png" class="" />
+            </td>
+            <td class="content-center">
+              <button
+                type="submit"
+                class="bg-[#10B981] w-18 rounded-lg py-2 px-4 h-[37px] text-white"
+              >
+                Trade
+              </button>
+            </td>
+          </tr>
+          <tr class="flex h-12.5 justify-between">
+            <td class="flex gap-2 items-center lg:w-40.5">
+              <img alt="img" src="/src/images/ETHEthereumToken.png" class="" />
+              <p class="">ETH</p>
+              <p class="text-[#90949E] hidden lg:block">Ethereum</p>
+            </td>
+            <td class="content-center w-19"><p class="">$1267.23</p></td>
+            <td class="content-center"><p class="text-[#10B981]">+4.26%</p></td>
+            <td class="content-center hidden lg:block">
+              <img alt="img" src="/src/images/ETHChart.png" class="" />
+            </td>
+            <td class="content-center">
+              <button
+                type="submit"
+                class="bg-[#10B981] w-18 rounded-lg py-2 px-4 h-[37px] text-white"
+              >
+                Trade
+              </button>
+            </td>
+          </tr>
+          <tr class="flex h-12.5 justify-between">
+            <td class="flex gap-2 items-center lg:w-40.5">
+              <img alt="img" src="/src/images/SOLSolana.png" class="" />
+              <p class="">SOL</p>
+              <p class="text-[#90949E] hidden lg:block">Solana</p>
+            </td>
+            <td class="content-center w-19"><p class="">$204.67</p></td>
+            <td class="content-center"><p class="text-[#EC2121]">-2.45%</p></td>
+            <td class="content-center hidden lg:block">
+              <img alt="img" src="/src/images/BitcoinChart.png" class="" />
+            </td>
+            <td class="content-center">
+              <button
+                type="submit"
+                class="bg-[#10B981] w-18 rounded-lg py-2 px-4 h-[37px] text-white"
+              >
+                Trade
+              </button>
+            </td>
+          </tr>
+          <tr class="flex h-12.5 justify-between">
+            <td class="flex gap-2 items-center lg:w-40.5">
+              <img alt="img" src="/src/images/BNBBNB.png" class="" />
+              <p class="">BNB</p>
+              <p class="text-[#90949E] hidden lg:block">Binance&nbsp;Coin</p>
+            </td>
+            <td class="content-center w-19"><p class="">$305.12</p></td>
+            <td class="content-center"><p class="text-[#10B981]">+1.56%</p></td>
+            <td class="content-center hidden lg:block">
+              <img alt="img" src="/src/images/ETHChart.png" class="" />
+            </td>
+            <td class="content-center">
+              <button
+                type="submit"
+                class="bg-[#10B981] w-18 rounded-lg py-2 px-4 h-[37px] text-white"
+              >
+                Trade
+              </button>
+            </td>
+          </tr>
+          <tr class="flex h-12.5 justify-between">
+            <td class="flex gap-2 items-center lg:w-40.5">
+              <img alt="img" src="/src/images/LTCLitecoinToken.png" class="" />
+              <p class="">LTC</p>
+              <p class="text-[#90949E] hidden lg:block">Litecoin</p>
+            </td>
+            <td class="content-center w-19"><p class="">$769'45</p></td>
+            <td class="content-center"><p class="text-[#EC2121]">-4.33%</p></td>
+            <td class="content-center hidden lg:block">
+              <img alt="img" src="/src/images/BitcoinChart.png" class="" />
+            </td>
+            <td class="content-center">
+              <button
+                type="submit"
+                class="bg-[#10B981] w-18 rounded-lg py-2 px-4 h-[37px] text-white justify-center"
+              >
+                Trade
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <button
+        type="submit"
+        class="border-none text-[#10B981] py-3 px-4.5 rounded-[4px] w-[143px] self-center bg-[#effffa]"
+      >
+        View More >
+      </button>
+    </div>
+    <div class="flex flex-col gap-10 lg:py-16 py-3 lg:px-36 px-4">
+      <div class="flex flex-col gap-2.5">
+        <h1
+          class="font-inter font-semibold lg:text-[39px] text-[28px] leading-[35px] lg:leading-[47px]"
+        >
+          Start Building Your Crypto Portfolio
+        </h1>
+        <p
+          class="font-normal font-inter lg:text-2xl text-lg lg:leading-7 leading-5 text-[#444A5B]"
+        >
+          Follow these simple steps to start your first trade
+        </p>
+      </div>
+      <div
+        class="flex flex-col lg:flex-row justify-between lg:gap-0 gap-5 w-full"
+      >
+        <div class="flex flex-col lg:gap-12 gap-4">
+          <div class="flex gap-9">
+            <img
+              src="/src/images/Icon.svg"
+              alt="img"
+              width="88px"
+              class="lg:block hidden"
+            />
+            <div class="flex flex-col gap-2">
+              <h3 class="font-inter font-semibold text-[23px] leading-7">
+                Identity Verification
+              </h3>
+              <p
+                class="font-inter font-normal text-[16px] leading-6 text-[#444A5B]"
+              >
+                Secure your account and transactions by completing the identity
+                verification process.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-9">
+            <img
+              src="/src/images/Icon2.svg"
+              alt="img"
+              width="88px"
+              class="lg:block hidden"
+            />
+            <div class="flex flex-col gap-2">
+              <h3 class="font-inter font-semibold text-[23px] leading-7">
+                Make a Deposit
+              </h3>
+              <p
+                class="font-inter font-normal text-base leading-6 text-[#444A5B]"
+              >
+                Secure your account and transactions by completing the identity
+                verification process.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-9">
+            <img
+              src="/src/images/Icon5.svg"
+              alt="img"
+              width="88px"
+              class="lg:block hidden"
+            />
+            <div class="flex flex-col gap-2">
+              <h3 class="font-inter font-semibold text-[23px] leading-7">
+                Start Trading
+              </h3>
+              <p
+                class="font-inter font-normal text-base leading-6 text-[#444A5B]"
+              >
+                Secure your account and transactions by completing the identity
+                verification process.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-9">
+            <img
+              src="/src/images/Icon4.svg"
+              alt="img"
+              width="88px"
+              class="lg:block hidden"
+            />
+            <div class="flex flex-col gap-2">
+              <h3 class="font-inter font-semibold text-[23px] leading-7">
+                Keep Track Of Your Portfolio
+              </h3>
+              <p
+                class="font-inter font-normal text-base leading-6 text-[#444A5B]"
+              >
+                Secure your account and transactions by completing the identity
+                verification process.
+              </p>
+            </div>
+          </div>
+        </div>
+        <img alt="img" src="/src/images/Illustration.svg" class="" />
+      </div>
+      <button
+        type="submit"
+        class="bg-[#10B981] py-3 px-4.5 text-white lg:w-[181px] rounded-[8px] w-full"
+      >
+        Start Your Journey
+      </button>
+    </div>
+    <div
+      class="bg-[#F4F5F7] lg:py-16 py-3 lg:px-36 px-4 w-full flex flex-col gap-10"
+    >
+      <div class="items-center content-center flex flex-col gap-3">
+        <h3 class="font-inter font-semibold text-xl leading-7">
+          STAKING CRYPTO
+        </h3>
+        <h1
+          class="font-inter font-semibold lg:text-[39px] text-[30px] lg:leading-[47px] text-[#10B981]"
+        >
+          Earn Crypto Rewards
+        </h1>
+        <p
+          class="font-inter font-normal lg:text-base text-[13px] leading-6 text-[#444A5B]"
+        >
+          Earn up to 40% in reward yearly by staking your assets
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2 justify-evenly">
+        <img alt="img" src="/src/images/Solana.svg" class="lg:w-45 w-40" />
+        <img alt="img" src="/src/images/Binance.svg" class="lg:w-45 w-40" />
+        <img alt="img" src="/src/images/Cosmos.svg" class="lg:w-45 w-40" />
+        <img alt="img" src="/src/images/Wanchain.svg" class="lg:w-45 w-40" />
+        <img alt="img" src="/src/images/DASH.svg" class="lg:w-45 w-40" />
+        <img alt="img" src="/src/images/DigiByte.svg" class="lg:w-45 w-40" />
+        <img alt="img" src="/src/images/Ontology.svg" class="lg:w-45 w-40" />
+        <img alt="img" src="/src/images/Viacoin.svg" class="lg:w-45 w-40" />
+        <img alt="img" src="/src/images/Tether.svg" class="lg:w-45 w-40" />
+        <img alt="img" src="/src/images/Neo.svg" class="lg:w-45 w-40" />
+      </div>
+      <button
+        type="submit"
+        class="bg-[#10B981] py-3 px-4.5 text-white w-full lg:w-[181px] rounded-[8px] self-center"
+      >
+        Start Earning >
+      </button>
+    </div>
+    <div
+      class="w-full lg:py-16 py-3 lg:px-36 px-4 flex flex-col gap-16 bg-[#FAFAFB]"
+    >
+      <div class="items-center flex flex-col gap-3">
+        <h1
+          class="font-inter font-semibold lg:text-[39px] text-[25px] lg:leading-[39px] leading-7 self-center"
+        >
+          Your Most Reliable Crypto Exchange
+        </h1>
+        <p class="font-inter font-normal text-xl leading-7 text-[#444A5B]">
+          Here are some reasons why you should choose VeeWallet
+        </p>
+      </div>
+      <div class="flex flex-col lg:flex-row justify-between w-full">
+        <div class="flex flex-col gap-4">
+          <img
+            alt="img"
+            src="/src/images/Secure storage.svg"
+            class="w-[160px] self-center"
+          />
+          <div class="flex flex-col gap-2.5">
+            <h3 class="font-inter self-center font-semibold text-xl leading-7">
+              Secure Storage
+            </h3>
+            <p
+              class="lg:w-60 self-center font-inter font-normal text-[16px] leading-6 text-[#444A5B]"
+            >
+              We ensure your funds are protected with both centralized and
+              decentralized methods.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <img
+            alt="img"
+            src="/src/images/Insurance protection.svg"
+            class="w-[160px] self-center"
+          />
+          <div class="flex flex-col gap-2.5">
+            <h3
+              class="self-center font-inter font-semibold text-[20px] leading-7"
+            >
+              Insurance Protection
+            </h3>
+            <p
+              class="self-center lg:w-60 font-inter font-normal text-[16px] leading-6 text-[#444A5B]"
+            >
+              All crypto cash and balances are maintained and insured by NIDC up
+              to a maximum of $400,000.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <img
+            alt="img"
+            src="/src/images/personal access.svg"
+            class="w-[160px] self-center"
+          />
+          <div class="flex flex-col gap-2.5">
+            <h3
+              class="self-center font-inter font-semibold text-[20px] leading-7"
+            >
+              Personalized Access Control
+            </h3>
+            <p
+              class="self-center lg:w-60 font-inter font-normal text-[16px] leading-6 text-[#444A5B]"
+            >
+              Personalized access control allows you to restrict devices and
+              addresses that can access your account, for greater ease of mind.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full bg-[#FAFAFB] lg:py-16 py-3 lg:px-36 px-4">
+      <div class="flex flex-col lg:flex-row lg:gap-16 gap-5">
+        <img src="/src/images/Mock Up.svg" alt="img" />
+        <div class="flex flex-col gap-10">
+          <div class="flex flex-col gap-3">
+            <h1 class="font-inter font-semibold text-[33px] leading-10">
+              Trade Anywhere, Anytime
+            </h1>
+            <p
+              class="font-inter font-normal text-lg leading-5.5 text-[#444A5B]"
+            >
+              Stay in touch across multiple devices and never miss out on
+              opportunities.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-8">
+            <img src="/src/images/iOS.svg" alt="img" class="w-22.5" />
+            <img src="/src/images/Android.svg" alt="img" class="w-22.5" />
+            <img src="/src/images/App store.svg" alt="img" class="w-22.5" />
+            <img src="/src/images/Linux.svg" alt="img" class="w-22.5" />
+            <img src="/src/images/Window.svg" alt="img" class="w-22.5" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-full flex flex-col lg:gap-16 gap-8 lg:py-16 py-3 lg:px-36 px-4 bg-[#FAFAFB]"
+    >
+      <h1
+        class="font-inter font-semibold lg:text-[39px] text-3xl leading-[47px]"
+      >
+        We Are Always Here
+      </h1>
+      <div class="flex flex-col lg:flex-row gap-9">
+        <div class="flex flex-col gap-3">
+          <img src="/src/images/Vector.svg" alt="img" class="w-12" />
+          <div class="flex flex-col gap-2">
+            <p class="font-inter font-semibold text-xl leading-7">
+              24/7 Customer Service
+            </p>
+            <p
+              class="font-inter font-normal text-base text-[#444A5B] leading-6"
+            >
+              If you have any questions, please do not hesitate to contact
+              VeeWallet's customer support.
+            </p>
+            <p
+              class="text-sm text-[#10B981] font-inter font-normal leading-[17px]"
+            >
+              Chart Now >
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3">
+          <img
+            src="/src/images/flat-color-icons_faq.svg"
+            alt="img"
+            class="w-12"
+          />
+          <div class="flex flex-col gap-2">
+            <p class="font-inter font-semibold text-xl leading-7">FAQ</p>
+            <p
+              class="font-inter font-normal text-base text-[#444A5B] leading-6"
+            >
+              For detailed instructions on specific features, please refer to
+              the FAQs.
+            </p>
+            <p
+              class="text-sm text-[#10B981] font-inter font-normal leading-[17px]"
+            >
+              Learn more >
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3">
+          <img
+            src="/src/images/fluent_people-community-16-filled.svg"
+            alt="img"
+            class="w-12"
+          />
+          <div class="flex flex-col gap-2">
+            <p class="font-inter font-semibold text-xl leading-7">Community</p>
+            <p
+              class="font-inter font-normal text-base text-[#444A5B] leading-6"
+            >
+              With over 15 languages supported, the VeeWallet Global Community
+              is home to millions of users from 20+ countries.
+            </p>
+            <p
+              class="text-sm text-[#10B981] font-inter font-normal leading-[17px]"
+            >
+              Learn more >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-full lg:py-16 py-5 lg:px-36 px-4 flex flex-col lg:gap-16 gap-6 bg-[#F4F5F7]"
+    >
+      <h1
+        class="text-center font-inter font-semibold lg:text-5xl text-3xl lg:leading-14 leading-7"
+      >
+        Begin Your Crypto Journey Today!
+      </h1>
+      <button
+        type="submit"
+        class="bg-[#10B981] py-3 px-4.5 text-white w-full lg:w-[181px] rounded-[8px] self-center"
+      >
+        Start Earning >
+      </button>
+    </div>
+    <div class="w-full lg:py-16 py-3 lg:px-36 px-4 bg-[#FAFAFB]">
+      <div class="flex lg:flex-row flex-col w-full gap-4 lg:justify-between">
+        <div class="flex flex-col gap-10">
+          <h2
+            class="font-glory font-bold text-[30px] text-[#10B981] leading-10 h-10"
+          >
+            VeeWallet
+          </h2>
+          <div class="flex flex-col gap-6">
+            <div class="flex gap-6">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-twitter"></i>
+            </div>
+            <div class="flex gap-6">
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fa-brands fa-whatsapp"></i>
+              <i class="fa-brands fa-linkedin"></i>
+            </div>
+            <div class="flex gap-6">
+              <i class="fa-brands fa-discord"></i>
+              <i class="fa-brands fa-github"></i>
+              <i class="fa-brands fa-telegram"></i>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <p class="font-inter font-semibold text-xl leading-7">About Us</p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            About
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Careers
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Community
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Blog
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Terms
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Privacy
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            About
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Announcements
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            News
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Sitemap
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Cookie Preferences
+          </p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <p class="font-inter font-semibold text-xl leading-7">Products</p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Exchange
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Academy
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            NFT
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Spot Trading
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Margin Trading
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Crypto Lending
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Trading Bot
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Launch Pad
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Trust Wallet
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Gift Card
+          </p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <p class="font-inter font-semibold text-xl leading-7">Services</p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Downloads
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Referral
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            P2P
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Identity Identification
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Technical Support
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            VIP
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Affilate Program
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Submit a request
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Verification Search
+          </p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <p class="font-inter font-semibold text-xl leading-7">Support</p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Technical Support
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            User Feedback
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Trading Rules
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            APIs
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Fees
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Account Access
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Payment Methods
+          </p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <p class="font-inter font-semibold text-xl leading-7">Learn</p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Crypto Guide
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Videos
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            Podcast
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            How to Buy Bitcoin
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            How to Buy Cardano
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            How to Buy Ripple
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            How to Buy Ethereum
+          </p>
+          <p class="font-inter font-normal leading-6 text-[#666F89] text-base">
+            How to Buy Tradable Altcoins
+          </p>
+        </div>
+      </div>
+    </div>
+    <nav class="border-t-2 border-[#E4E5EB] bg-[#FAFAFB] w-full py-6">
+      <p
+        class="font-inter font-normal text-[#444A5B] text-xs leading-3.5 text-center"
+      >
+        Copyright © 2022 All Rights Reserved
+      </p>
+    </nav>
+  </body>
+</html>
